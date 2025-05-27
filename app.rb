@@ -5,33 +5,33 @@ get("/") do
   redirect("/add")
 end
 
-get("/ad") do
+get("/add/form") do
   erb(:add_form)
 end
 
-get("/wizard_add") do
+get("/add/result") do
   @first_num = params.fetch("first_num").to_f
-
+  @second_num = params.fetch("second_num").to_f
   @result = @first_num + @second_num
   erb(:add_result)
 end
 
-get("/subtract") do
+get("/sub/form") do
   erb(:sub_form)
 end
 
-get("/wizard_subtract") do
+get("/sub/result") do
   @first_num = params.fetch("first_num").to_f
   @second_num = params.fetch("second_num").to_f
-
+  @result = @second_num - @first_num
   erb(:sub_result)
 end
 
-get("/multiply") do
-  erb(:multiplication_form)
+get("/mult/form") do
+  erb(:mult_form)
 end
 
-get("/wizard multiply") do
+get("/mult/result") do
   erb(:mult_result)
 end
 
